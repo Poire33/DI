@@ -15,4 +15,22 @@ public class ProductServices {
         myList.add(product);
         return myList;
     }
+
+    public List<Product> removeProduct(Product product)
+    {
+        myList.remove(product);
+        return myList;
+    }
+
+    public List<Product> updateProduct(Product product)
+    {
+        myList.remove(product);
+        myList.add(product);
+        return myList;
+    }
+
+    public List<Product> listProduct(Product product)
+    {
+        return myList;
+    }
 }
