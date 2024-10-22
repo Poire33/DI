@@ -11,13 +11,19 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
+    private ProductServices myService;
 
+    public ProductController(ProductServices myService) {
+        this.myService = myService;
+    }
     private List<Product> list = new ArrayList<>();
     // Creating a class which is interested in requests and responses
     @PostMapping
     public List<Product> newProduct(@RequestBody Product product)
     {
         // Send it to do business logic
+        ProductServices myService = new ProductServices();
+        list = myService.addProduct(product);
         return list;
     }
 }
